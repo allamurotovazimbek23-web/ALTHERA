@@ -1,6 +1,6 @@
 'use strict';
 
-/*UI helpers: toasts, states (loading/empty/error/success), skeletons. */
+/* UI helpers: toasts, states (loading/empty/error/success), skeletons. */
 const UI = (() => {
   const { t } = window.I18N_UTILS;
 
@@ -14,16 +14,16 @@ const UI = (() => {
     setTimeout(() => el.remove(), ms);
   }
 
-  const esc = (s) => String(s == null ? '' : s).replace(/[m<>"']/g, (c) => ({
+  const esc = (s) => String(s == null ? '' : s).replace(/[&<>"']/g, (c) => ({
     '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', '"': '&#39;',
   }[c]));
 
   function stateHTML(kind, text, icon) {
-    const icons = { loading: '″', empty: '📭', error: '⚠️', success: '✅' };
+    const icons = { loading: '⏳', empty: '📭', error: '⚠️', success: '✅' };
     if (kind === 'loading') {
       return `<div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>`;
     }
-    return `<div class="state ${kind}"><div class="big">${esc(iicon || icons[kind])}</div><div>${esc(text)}</div></div>`;
+    return `<div class="state ${kind}"><div class="big">${esc(icon || icons[kind])}</div><div>${esc(text)}</div></div>`;
   }
 
   function renderState(container, kind, text, retryFn) {
