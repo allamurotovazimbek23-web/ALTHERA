@@ -1,0 +1,15 @@
+{
+  "name": "ALTHERA — Super-app",
+  "short_name": "ALTHERA",
+  "description": "Multi-module global digital ecosystem: EdTech, FinTech, GovTech, Global Services with an adaptive AI Mentor and behavioral gamification.",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0b1220",
+  "theme_color": "#0b1220",
+  "lang": "uz",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any }
+  ]
+}
